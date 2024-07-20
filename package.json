@@ -1,0 +1,68 @@
+{
+  "name": "electron-game-updater-lite",
+  "productName": "Electron Game Updater Lite",
+  "author": "Gustavo Kei Amemiya",
+  "description": "Electron Game Updater Lite",
+  "version": "0.0.1",
+  "fileAssociations": {
+    "description": "Electron Game Updater Lite"
+  },
+  "license": "MIT",
+  "scripts": {
+    "compile": "electron-webpack",
+    "dev": "electron-webpack dev",
+    "build": "npm run compile && electron-builder --w --x64",
+    "dist": "npm run compile && (for /F \"tokens=*\" %i in (.env) do set %i) && electron-builder --w --x64 --publish always && env-cmd node build/delete-old-releases.js"
+  },
+  "dependencies": {
+    "7zip-bin": "^5.2.0",
+    "electron-dl": "^3.0.2",
+    "node-7z": "^3.0.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-hot-loader": "^4.13.1",
+    "source-map-support": "^0.5.19"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/plugin-transform-optional-chaining": "^7.23.4",
+    "@babel/preset-react": "^7.12.10",
+    "@octokit/core": "^3.2.4",
+    "electron": "11.1.1",
+    "electron-builder": "22.9.1",
+    "electron-webpack": "^2.8.2",
+    "electron-webpack-eslint": "^6.0.0",
+    "env-cmd": "^10.1.0",
+    "eslint-plugin-react": "^7.21.5",
+    "sass": "^1.30.0",
+    "sass-loader": "^10.1.0",
+    "shelljs": "^0.8.4",
+    "webpack": "^4.44.2"
+  },
+  "build": {
+    "extraResources": [
+      {
+        "from": "node_modules/7zip-bin/win/x64/7za.exe",
+        "to": "node_modules/7zip-bin/win/x64/7za.exe"
+      }
+    ],
+    "win": {
+      "target": "portable",
+      "requestedExecutionLevel": "highestAvailable",
+      "icon": "build/icon.ico",
+      "publish": [
+        {
+          "provider": "github",
+          "repo": "electron-game-updater-lite",
+          "owner": "gustavokei",
+          "private": false,
+          "releaseType": "release"
+        }
+      ]
+    },
+    "portable": {
+      "artifactName": "launcher.${ext}",
+      "requestExecutionLevel": "admin"
+    }
+  }
+}

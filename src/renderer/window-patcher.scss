@@ -1,0 +1,152 @@
+body {
+  // background: url("./assets/background.jpg") no-repeat center center;
+  background: darkgray;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  width: 854px;
+  height: 480px;
+  overflow: hidden;
+}
+
+button:active, button:focus {
+  outline: none;
+  border: none;
+}
+
+.top-bar {
+  background-color: #070707;
+  height: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  -webkit-app-region: drag;
+}
+
+.title {
+  color: #fff;
+  margin-left: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+#btnClose {
+  background: none;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 15px;
+  width: 15px;
+  height: 15px;
+  border: none;
+  cursor: pointer;
+  -webkit-app-region: no-drag;
+}
+
+.btnStart {
+  border: none;
+  width: 200px;
+  height: 50px;
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+#btnStartDisabled {
+  background-color: #888888;
+  color: #686868;
+}
+
+#btnStart {
+  background-color: #e6b822;
+  color: #796614;
+  cursor: pointer;
+}
+
+.text {
+  display: block;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  position: absolute;
+  text-align: left;
+  pointer-events: none;
+}
+
+#txtFile {
+  bottom: 35px;
+  left: 35px;
+}
+
+#txtStatus {
+  bottom: 68px;
+  left: 40px;
+  font-size: 14px;
+}
+
+#txtProgress {
+  bottom: 90px;
+  left: 40px;
+  font-size: 14px;
+}
+
+#txtDownloadSpeed {
+  bottom: 18px;
+  left: 40px;
+  font-size: 14px;
+}
+
+#txtTimeRemaining {
+  text-align: right;
+  bottom: 68px;
+  left: 40px;
+  font-size: 14px;
+  width: 532px;
+}
+
+#fileProgress {
+  height: 7px;
+  width: 400px;
+  display: flex;
+  position: absolute;
+  bottom: 40px;
+  left: 80px;
+}
+
+#totalProgress {
+  background: rgba(255,255,255,0.5);
+  border: 1px solid #fff;
+  border-radius: 5px;
+  height: 18px;
+  display: flex;
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+}
+
+#totalLeft {
+  height: 18px;
+  width: 4px;
+}
+
+#totalMid {
+  height: 18px;
+  width: 532px;
+  display: flex;
+}
+
+#totalBar {
+  background: rgba(255,255,255,0.8);
+  border-radius: 5px;
+  height: 100%;
+  width: 0%;
+}
